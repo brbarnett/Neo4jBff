@@ -1,0 +1,19 @@
+﻿@using Neo4jBff.AspNet.Models
+@model IEnumerable<Actor>
+@{
+    ViewBag.Title = "Actors";
+}
+
+<h1>Actors</h1>
+
+@foreach (Actor actor in Model)
+{
+    <div class="row">
+        <div class="col-xs-4">
+            Name: <a href="~/Actor/Details?id=@actor.name">@actor.name</a>
+        </div>
+        <div class="col-xs-4">
+            Born: @actor.born
+        </div>
+    </div>
+}

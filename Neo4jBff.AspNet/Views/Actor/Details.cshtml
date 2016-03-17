@@ -1,0 +1,37 @@
+﻿@using Neo4jBff.AspNet.Models
+@model ActorWithMovies
+@{
+    ViewBag.Title = Model.Actor.name;
+}
+
+<h1>@Model.Actor.name</h1>
+<h3>@Model.Actor.born</h3>
+
+<h2>Movies</h2>
+@foreach (Movie movie in Model.Movies)
+{
+    <div class="row">
+        <div class="col-xs-3">
+            Title: <a href="~/Movie/Details?id=@movie.title">@movie.title</a>
+        </div>
+        <div class="col-xs-4">
+            Tagline: @movie.tagline
+        </div>
+        <div class="col-xs-4">
+            Released: @movie.released
+        </div>
+    </div>
+}
+
+<h2>Has Worked With</h2>
+@foreach (Actor actor in Model.CoActors)
+{
+    <div class="row">
+        <div class="col-xs-4">
+            Name: <a href="~/Actor/Details?id=@actor.name">@actor.name</a>
+        </div>
+        <div class="col-xs-4">
+            Born: @actor.born
+        </div>
+    </div>
+}

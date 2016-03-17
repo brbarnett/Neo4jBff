@@ -1,0 +1,22 @@
+﻿@using Neo4jBff.AspNet.Models
+@model IEnumerable<Movie>
+@{
+    ViewBag.Title = "Movies";
+}
+
+<h1>Movies</h1>
+
+@foreach (Movie movie in Model)
+{
+    <div class="row">
+        <div class="col-xs-3">
+            Title: <a href="~/Movie/Details/@movie.title">@movie.title</a>
+        </div>
+        <div class="col-xs-4">
+            Tagline: @movie.tagline
+        </div>
+        <div class="col-xs-4">
+            Released: @movie.released
+        </div>
+    </div>
+}
