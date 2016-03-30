@@ -33,8 +33,6 @@ namespace Neo4jBff.AspNet.App_Start
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            //container.RegisterType<GraphClient>(new HierarchicalLifetimeManager(),
-            //    new InjectionConstructor(new Uri("http://localhost:7474/"), "neo4j", "Welcome1"));
             var graphClient = new GraphClient(new Uri("http://localhost:7474/db/data"), "neo4j", "Welcome1");
             graphClient.Connect();
             container.RegisterInstance<GraphClient>(graphClient);
