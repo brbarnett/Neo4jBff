@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4jBff.AspNet", "Neo4jBff.AspNet\Neo4jBff.AspNet.csproj", "{F4D504D3-40B5-40E5-93F7-ADAB3DEC2104}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{16051082-51C8-4F77-B730-99EC98551159}"
+	ProjectSection(SolutionItems) = preProject
+		Presentation\BFF - Neo4j.pptx = Presentation\BFF - Neo4j.pptx
+		Presentation\Cypher Commands.txt = Presentation\Cypher Commands.txt
+		Presentation\DB Seed.sql = Presentation\DB Seed.sql
+		Presentation\DB Seed.xlsx = Presentation\DB Seed.xlsx
+		Presentation\neo4j-community_windows-x64_2_3_3.exe = Presentation\neo4j-community_windows-x64_2_3_3.exe
+		Presentation\Presentation Steps.txt = Presentation\Presentation Steps.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

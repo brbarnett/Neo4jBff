@@ -1,0 +1,61 @@
+:play movie graph
+
+Review nodes
+
+Review Neo4jBffDB diagram
+
+// Get all People
+
+SELECT * FROM People
+
+MATCH (a:Person) RETURN a
+
+// Get all producers
+
+SELECT DISTINCT
+		p.Name
+FROM
+		People p
+			inner join
+		ProducersMovies pm
+			on
+		P.Id = pm.ProducerId
+		
+MATCH (p:Person) 
+WHERE EXISTS((p)-[:PRODUCED]->(:Movie)) 
+RETURN p
+
+// Check out Keanu and those he's worked with
+
+SELECT
+		*
+FROM
+		People P
+			inner join
+		ActorsMovies AM
+			on
+		P.Id = AM.ActorId
+			inner join
+		Movies M
+			on
+		AM.MovieId = M.Id
+			inner join
+		ActorsMovies AM2
+			on
+		M.Id = AM2.MovieId
+			inner join
+		People P2
+			on
+		AM2.ActorId = P2.Id
+			and
+		P2.Id <> P.Id
+WHERE
+		P.Name = 'Keanu Reeves'
+		
+MATCH (a:Person { name: 'Keanu Reeves' }),	// get Keanu Reeves
+	  (a)-[:ACTED_IN]->(m:Movie),	// movies he's acted in
+	  (m)<-[:ACTED_IN]-(o:Person)	// co-stars
+WHERE a <> o
+RETURN a AS Actor, collect(distinct m) AS Movies, collect(distinct o) AS CoActors
+LIMIT 1
+

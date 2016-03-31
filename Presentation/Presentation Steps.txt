@@ -1,0 +1,17 @@
+00 - Uninstall Neo4j
+		- Run uninstall.exe
+		- Delete Neo4j dir
+01 - Open presentation
+02 - Download and install Neo4j
+		- http://neo4j.com/download/
+		- Launch installer
+		- Install to: D:\DB\Neo4j
+		- Create D:\DB\Neo4j\db (DB location)
+		- Start DB
+03 - Discuss Cypher
+04 - Cypher demo
+		- Launch SSMS and log in
+		- Head to http://localhost:7474/browser/, change password to Welcome1
+		- Open Cypher Commands (SQP + Cypher)
+05 - App demo
+		
